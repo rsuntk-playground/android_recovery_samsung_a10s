@@ -1,0 +1,5 @@
+ro.display.series="Galaxy A10s"
+ro.boot.usbcontroller=musb-hdrc
+sys.usb.config=mtp,adb
+persist.sys.usb.config=mtp,adb
+ro.boot.boot_devices=bootdevice
