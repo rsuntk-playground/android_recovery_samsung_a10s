@@ -24,4 +24,4 @@ TARGET_SCREEN_DENSITY := 271
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 
 # Copy
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10s/recovery/root,recovery/root
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10s/recovery/root,recovery/root)
