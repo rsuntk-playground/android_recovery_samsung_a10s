@@ -19,6 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/samsung/a10s/device.mk)
 
+PLATFORM_VERSION := 12
 PRODUCT_DEVICE := a10s
 PRODUCT_NAME := twrp_a10s
 PRODUCT_BRAND := samsung
