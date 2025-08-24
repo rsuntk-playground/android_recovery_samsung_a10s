@@ -18,4 +18,12 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/samsung/a10s/device.mk)
-$(call inherit-product, device/samsung/a10s/common/a10s.mk)
+
+PRODUCT_DEVICE := a10s
+PRODUCT_NAME := twrp_a10s
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-A107F
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
+BUILD_FINGERPRINT := samsung/a10sxx/a10s:11/RP1A.200720.012/A107FXXS8CWD3:user/release-keys
