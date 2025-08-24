@@ -32,9 +32,9 @@ ENABLE_SCHEDBOOST := true
 # Architecture
 ifeq ($(TARGET_ARCH),arm64)
 $(warning "Building for arm64")
-$(call inherit-product, $(DEVICE_PATH)/common/arm64.mk
+include $(DEVICE_PATH)/common/arch_arm64.mk
 else
-$(call inherit-product, $(DEVICE_PATH)/common/arm.mk
+include $(DEVICE_PATH)/common/arch_arm.mk
 endif
 
 # Assert
@@ -113,4 +113,4 @@ RECOVERY_SDCARD_ON_DATA := true
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
-$(call inherit-product, $(DEVICE_PATH)/common/config.mk)
+include $(DEVICE_PATH)/common/config.mk
