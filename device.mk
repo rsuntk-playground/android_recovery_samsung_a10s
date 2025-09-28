@@ -33,5 +33,11 @@ $(warning "Building for arm64")
 include $(LOCAL_PATH)/common/arch_arm64.mk
 endif
 
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service \
+    libhealthd.$(PRODUCT_PLATFORM)
+
 # Copy
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10s/recovery/root,recovery/root)
