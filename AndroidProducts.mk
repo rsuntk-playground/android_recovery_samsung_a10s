@@ -16,7 +16,7 @@
 #
 
 PRODUCT_MK_ARM := twrp_a10s
-PRODUCT_MK_ARM64 := twrp_a10s-arm64
+PRODUCT_MK_ARM64 := twrp_a10s_arm64
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/$(PRODUCT_MK_ARM).mk \

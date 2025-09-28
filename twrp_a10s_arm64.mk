@@ -22,4 +22,4 @@ include device/samsung/a10s/twrp_common.mk
 TARGET_DEVICE_ARCH := arm64
 
 # Define Product name
-PRODUCT_NAME := twrp_a10s-arm64
+PRODUCT_NAME := twrp_a10s_arm64
