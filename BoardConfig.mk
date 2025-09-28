@@ -21,21 +21,13 @@ DEVICE_PATH := device/samsung/a10s
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Workaround
-TARGET_COPY_OUT_VENDOR := vendor
+#TARGET_COPY_OUT_VENDOR := vendor
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # CPU
 TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
-
-# Architecture
-ifeq ($(TARGET_ARCH),arm64)
-$(warning "Building for arm64")
-include $(DEVICE_PATH)/common/arch_arm64.mk
-else
-include $(DEVICE_PATH)/common/arch_arm.mk
-endif
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a10s,a10sxx,a10sub
@@ -68,7 +60,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_MKBOOTIMG_ARGS += --recovery_dtbo $(BOARD_PREBUILT_DTBOIMAGE)
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/prebuilt/mkbootimg/mkbootimg_cus.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -115,4 +107,4 @@ RECOVERY_SDCARD_ON_DATA := true
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
-include $(DEVICE_PATH)/common/config.mk
+include $(DEVICE_PATH)/common/tw_config.mk

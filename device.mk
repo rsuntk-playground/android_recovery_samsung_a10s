@@ -23,5 +23,15 @@ TARGET_SCREEN_HEIGHT := 1520
 TARGET_SCREEN_DENSITY := 271
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 
+# Architecture
+TARGET_DEVICE_ARCH ?= arm
+ifeq ($(TARGET_DEVICE_ARCH),arm)
+$(warning "Building for arm")
+include $(LOCAL_PATH)/common/arch_arm.mk
+else
+$(warning "Building for arm64")
+include $(LOCAL_PATH)/common/arch_arm64.mk
+endif
+
 # Copy
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a10s/recovery/root,recovery/root)

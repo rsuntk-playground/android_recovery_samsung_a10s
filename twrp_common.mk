@@ -15,11 +15,15 @@
 # limitations under the License.
 #
 
-# Include from common twrp defs
-include device/samsung/a10s/twrp_common.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, device/samsung/a10s/device.mk)
 
-# Define TWRP arch
-TARGET_DEVICE_ARCH := arm
+PLATFORM_VERSION := 12
+PRODUCT_DEVICE := a10s
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-A107F
+PRODUCT_MANUFACTURER := samsung
 
-# Define Product name
-PRODUCT_NAME := twrp_a10s
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
+BUILD_FINGERPRINT := samsung/a10sxx/a10s:11/RP1A.200720.012/A107FXXS8CWD3:user/release-keys

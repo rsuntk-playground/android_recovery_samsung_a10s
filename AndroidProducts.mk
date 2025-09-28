@@ -15,10 +15,21 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_a10s.mk
+PRODUCT_MK_ARM := twrp_a10s
+PRODUCT_MK_ARM64 := twrp_a10s-arm64
 
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/$(PRODUCT_MK_ARM).mk \
+    $(LOCAL_DIR)/$(PRODUCT_MK_ARM64).mk
+
+# ARM
 COMMON_LUNCH_CHOICES := \
-    twrp_a10s-user \
-    twrp_a10s-userdebug \
-    twrp_a10s-eng
+    $(PRODUCT_MK_ARM)-user \
+    $(PRODUCT_MK_ARM)-userdebug \
+    $(PRODUCT_MK_ARM)-eng
+
+# ARM64
+COMMON_LUNCH_CHOICES += \
+    $(PRODUCT_MK_ARM64)-user \
+    $(PRODUCT_MK_ARM64)-userdebug \
+    $(PRODUCT_MK_ARM64)-eng
