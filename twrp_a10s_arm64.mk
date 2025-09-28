@@ -18,6 +18,9 @@
 # Include from common twrp defs
 include device/samsung/a10s/twrp_common.mk
 
+# 64Bit core
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 # Define TWRP arch
 TARGET_DEVICE_ARCH := arm64
 
